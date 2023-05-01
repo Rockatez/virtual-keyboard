@@ -34,3 +34,44 @@
   font-weight: bold;
   color: #333;
 }
+
+.key:hover {
+  background-color: #e6e6e6;
+}
+
+.key:active {
+  background-color: #d9d9d9;
+}
+
+.tab {
+  width: 60px;
+}
+
+.capslock {
+  width: 80px;
+}
+
+.shift {
+  width: 90px;
+}
+
+.right-shift {
+  width: 100px;
+}
+
+.backspace {
+  width: 70px;
+}
+
+.enter {
+  width: 70px;
+}
+
+.spacebar {
+  width: 320px;
+}
+
+.key.active {
+  background-color: green;
+  color: white;
+}
