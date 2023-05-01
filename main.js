@@ -43,24 +43,20 @@ document.addEventListener("keydown", event => {
     input.value = input.value.slice(0, -1);
   }
 
-   // iterate through virtual keyboard keys
    document.querySelectorAll(".key").forEach(key => {
     const keyValue = key.textContent;
 
-    // check if key value matches the pressed key
     if (keyChar === keyValue) {
       key.classList.add("active");
     }
   });
 
-    // toggle the Caps Lock key on/off
     if (keyChar === "CapsLock") {
       event.preventDefault();
       isCapsLockOn = !isCapsLockOn;
       document.querySelector(".capslock").classList.toggle("active");
     }
   
-    // update the input value with the pressed key
     if (/[a-zA-Z0-9]/.test(keyChar)) {
       if (isCapsLockOn) {
         input.value += keyChar.toUpperCase();
@@ -69,3 +65,15 @@ document.addEventListener("keydown", event => {
       }
     }
   });
+
+document.addEventListener("keyup", event => {
+  const keyChar = event.key;
+
+  document.querySelectorAll(".key").forEach(key => {
+    const keyValue = key.textContent;
+
+    if (keyChar === keyValue) {
+      key.classList.remove("active");
+    }
+  });
+});
